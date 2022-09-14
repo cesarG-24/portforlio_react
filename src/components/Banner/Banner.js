@@ -59,7 +59,7 @@ const UserImgStyled = styled.img`
 export const Banner = (props) => {
     const {title, description} = props;
 
-    const user = 'https://s3-alpha-sig.figma.com/img/c316/adc4/65a80990af3a0075303343f0d615c92a?Expires=1662336000&Signature=HmlBYYumJ9qIXb5YIxSPBuTxeAUkLWcI1y46R9dwqc1KTU7MgRNxGrVLL1~On2GzJW20MwAs9HKnj9F3mC-9usLzYIsxQDhh6PrF~zpYKTKJL1wevWs-hFZkvtvp2xROzJh50uMS0wAv4CMnjvu3vEFS5rb~y92QYqrL3Pz7aMbEep4JmJWPqYr~I0NzItKYJX1CK4kztoxFb75aQPCzbUbSC9BGlJGB2nwpcpYSFsgUGq3fSwbNl748Tmw-seqptNRhhdd6ULp2qfyJExTJeve8A4wUp1W27lbFKTgpdS2xU~psVCPaZLslOP93tr9CYPeX0qSZ5O1o6aGUk3soGg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'
+    const user = 'https://s3-alpha-sig.figma.com/img/c316/adc4/65a80990af3a0075303343f0d615c92a?Expires=1664150400&Signature=anxqoJR~2wIcOMpHMYYWqkjZvSGAC~NW4ElVl3slInzDuDVKdS~jI3HgIFweLGy55aAUOykMbrFJkf2YvCMh1DyCbBgGI87jSoz1OOIUhUdPTQB3fXNSt5bVJjXIn1dC91vNrH2cQsfwc1ZhNZjWZ5YDC30rQAnD~d9-P41B3~CxJIi3uvYa1DjFL1uY1vXxuZcWASNqfkdJ8uIMNtlzoHWIQ0o5YgnwEopGg7hoJyBDQ1XSpt5e~uy4Kprk8BwTCZU~k5Pf6gH7eZizKjM-w8HbNio981RekwlLgk4fW3i5z-BRf-7pvrk~8MbPANksoBeQ7e871x~PbuXbPPjktg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'
 
     return (
         <BannerStyled>
