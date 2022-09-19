@@ -4,6 +4,8 @@ import {useNavigate} from "react-router-dom";
 import {works} from "../../constants";
 
 import {Work} from "../../components/Work";
+import {Search} from "../../components/Search";
+import {useEffect, useMemo, useState} from "react";
 
 const Title = styled.h1`
   max-width: 652px;
@@ -16,7 +18,7 @@ const Title = styled.h1`
     padding: 0 21px  ;
   }
 `
-const ContainerStyled = styled.div`
+const WorkStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 61px;
@@ -25,6 +27,7 @@ const ContainerStyled = styled.div`
   margin: 0 auto;
   align-items: center;
   padding: 55px 235px 0;
+  cursor: pointer;
 
   > div {
     border-bottom: 1px solid #E0E0E0;
@@ -47,28 +50,46 @@ const ContainerStyled = styled.div`
 
 export default function Works() {
     const navigate = useNavigate();
-
     const handleClick = (work) => {
         navigate(`/work/${work.id}`);
     }
 
+    const [search, setSearch] = useState('');
+
+    const filterWorks = useMemo(() => {
+
+        return works.filter((post) => {
+            return post.title.toLowerCase().includes(search) || post.description.toLowerCase().includes(search)
+        })
+
+    }, [works, search])
+
+
+    useEffect(() => {
+
+        console.log('match: ' + filterWorks.length);
+
+    }, [filterWorks])
+
+
     return (
         <>
             <Title>Works</Title>
+            <Search onSearch={setSearch}/>
 
-            <ContainerStyled>
-                {works.map(work => (
+            <WorkStyled>
+                {filterWorks.map(work => (
                     <Work
-                        onClick = {() => handleClick(work)}
-                        key = {work.title}
-                        preview = {work.preview}
-                        title = {work.title}
-                        label1 = {work.label1}
-                        label2 = {work.label2}
-                        description = {work.description}
+                        onClick={() => handleClick(work)}
+                        key={work.title}
+                        preview={work.preview}
+                        title={work.title}
+                        label1={work.label1}
+                        label2={work.label2}
+                        description={work.description}
                     />
                 ))}
-            </ContainerStyled>
+            </WorkStyled>
         </>
     );
 }
