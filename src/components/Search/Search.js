@@ -16,7 +16,7 @@ const SearchWrapper = styled.div`
 
 `
 
-export const Search = (props) => {
+export const Search = (props) => {cesar
 
     const {onSearch} = props;
 
