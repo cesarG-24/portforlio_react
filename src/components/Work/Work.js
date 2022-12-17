@@ -95,11 +95,11 @@ export const Work = (props) => {
     return (
         <ContainerStyled {...rest}>
             <LeftStyled>
-                <PreviewStyled src = {preview} alt = ""/>
+                <PreviewStyled src={preview} alt=""/>
             </LeftStyled>
 
             <RightStyled>
-                <TitleStyled> {title}</TitleStyled>
+                <TitleStyled>{title}</TitleStyled>
 
                 <LabelsStyled>
                     <Span1Styled>{label1}</Span1Styled>
